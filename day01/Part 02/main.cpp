@@ -2,39 +2,19 @@
 #include <fstream>
 #include <vector>
 #include <map>
-#include <stdbool.h>
 #include <stdlib.h>
 #include <cstring>
 
-const std::map<std::string, std::pair<int, int>> &getMapNumberWord(void)
-{
-	static std::map<std::string, std::pair<int, int>> numberUtils;
-
-	if (numberUtils.empty())
-	{
-		numberUtils["one"] = {3, 1};
-		numberUtils["two"] = {3, 2};
-		numberUtils["three"] = {5, 3};
-		numberUtils["four"] = {4, 4};
-		numberUtils["five"] = {4, 5};
-		numberUtils["six"] = {3, 6};
-		numberUtils["seven"] = {5, 7};
-		numberUtils["eight"] = {5, 8};
-		numberUtils["nine"] = {4, 9};
-	}
-	return numberUtils;
-}
-
 int findNumberWord(const std::string &word)
 {
-	static const std::map<std::string, std::pair<int, int>> numberUtils = getMapNumberWord();
-	std::map<std::string, std::pair<int, int>>::const_iterator it = numberUtils.begin();
+	static const std::map<std::string, int> numberUtils = {{"one", 1}, {"two", 2}, {"three", 3}, {"four", 4}, {"five", 5}, {"six", 6}, {"seven", 7}, {"eight", 8}, {"nine", 9}};
+	std::map<std::string, int>::const_iterator it = numberUtils.begin();
 
 	for (; it != numberUtils.end(); it++)
 	{
 
-		if (!strncmp(word.c_str(), it->first.c_str(), it->second.first))
-			return it->second.second;
+		if (!strncmp(word.c_str(), it->first.c_str(), it->first.length()))
+			return it->second;
 	}
 	return 0;
 }
@@ -49,9 +29,7 @@ size_t getNumberLine(const std::string &line)
 	for (; it != itEnd; it++)
 	{
 		if (std::isdigit(*it))
-		{
 			vec.push_back(*it - '0');
-		}
 		else
 		{
 			tmp = findNumberWord(&*it);
