@@ -8,12 +8,10 @@
 
 const std::map<std::string, std::pair<int, int>> &getMapNumberWord(void)
 {
-
 	static std::map<std::string, std::pair<int, int>> numberUtils;
 
 	if (numberUtils.empty())
 	{
-
 		numberUtils["one"] = {3, 1};
 		numberUtils["two"] = {3, 2};
 		numberUtils["three"] = {5, 3};
@@ -29,7 +27,6 @@ const std::map<std::string, std::pair<int, int>> &getMapNumberWord(void)
 
 int findNumberWord(const std::string &word)
 {
-
 	static const std::map<std::string, std::pair<int, int>> numberUtils = getMapNumberWord();
 	std::map<std::string, std::pair<int, int>>::const_iterator it = numberUtils.begin();
 
@@ -44,7 +41,6 @@ int findNumberWord(const std::string &word)
 
 size_t getNumberLine(const std::string &line)
 {
-
 	int tmp;
 	std::vector<int> vec;
 	std::string::const_iterator it = line.begin();
@@ -68,7 +64,6 @@ size_t getNumberLine(const std::string &line)
 
 int main(int argc, char **argv)
 {
-
 	std::string line;
 	std::ifstream file;
 	size_t value = 0;
