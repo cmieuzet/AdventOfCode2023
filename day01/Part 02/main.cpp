@@ -12,7 +12,6 @@ int findNumberWord(const std::string &word)
 
 	for (; it != numberUtils.end(); it++)
 	{
-
 		if (!strncmp(word.c_str(), it->first.c_str(), it->first.length()))
 			return it->second;
 	}
