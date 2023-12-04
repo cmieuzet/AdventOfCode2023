@@ -13,6 +13,7 @@ public:
     ~Puzzle();
 
     void setMatrix(const std::string &line);
+    void printMatrix() const;
     int pushNumber(int y, int x);
     void getSomeNumbersAdjacent(int y, int x);
     void setNumbers();
@@ -36,6 +37,16 @@ void Puzzle::setMatrix(const std::string &line)
             lineChar.push_back(*it);
     }
     _matrix.push_back(lineChar);
+}
+
+void Puzzle::printMatrix() const
+{
+    for (auto it = _matrix.begin(); it != _matrix.end(); it++)
+    {
+        for (auto it2 = it->begin(); it2 != it->end(); it2++)
+            std::cout << "[" << *it2 << "]";
+        std::cout << std::endl;
+    }
 }
 
 int Puzzle::pushNumber(int y, int x)
@@ -107,6 +118,7 @@ int main(int argc, char **argv)
     while (getline(file, line))
         puzzle.setMatrix(line);
     file.close();
+    puzzle.printMatrix();
     puzzle.setNumbers();
     value = puzzle.getSomeNumbers();
     std::cout << "Answer : " << value << std::endl;
