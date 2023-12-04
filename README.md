@@ -4,7 +4,7 @@ Day01 : c++
 
 Day02 : c++
 
-Day03 : xx
+Day03 : c++
 
 Day04 : c++
 
