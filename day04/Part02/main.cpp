@@ -80,8 +80,7 @@ int getNbCardsWonPerLine(const std::string &line)
 void setNbCardsWon(std::vector<std::pair<int, int>> &cardsGame)
 {
     std::vector<std::pair<int, int>>::iterator it = cardsGame.begin();
-    int t = 0;
-    std::vector<std::pair<int, int>>::iterator itTmp = cardsGame.begin();
+    std::vector<std::pair<int, int>>::iterator itTmp;
     for (; it != cardsGame.end(); it++)
     {
         itTmp = it;

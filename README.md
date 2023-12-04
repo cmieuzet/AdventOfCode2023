@@ -6,6 +6,8 @@ Day02 : c++
 
 Day03 : xx
 
+Day04 : c++
+
 / *** Rust ***/
 
 cargo new dayxx
