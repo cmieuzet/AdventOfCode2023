@@ -46,7 +46,7 @@ int Puzzle::pushNumber(int y, int x)
     while (xTmp >= 0 && std::isdigit(_matrix[y][xTmp]))
         xTmp--;
     xTmp++;
-    while (xTmp < _matrix[y].size() && std::isdigit(_matrix[y][xTmp]))
+    while (xTmp < (int)_matrix[y].size() && std::isdigit(_matrix[y][xTmp]))
     {
         numbers *= 10;
         numbers += _matrix[y][xTmp] - '0';
@@ -64,7 +64,7 @@ void Puzzle::getSomeNumbersAdjacent(int y, int x)
     {
         for (int j = x - 1; j <= x + 1; j++)
         {
-            if (i < 0 || i >= _matrix.size() || j < 0 || j >= _matrix[i].size())
+            if (i < 0 || i >= (int)_matrix.size() || j < 0 || j >= (int)_matrix[i].size())
                 continue;
             if (std::isdigit(_matrix[i][j]))
                 j += this->pushNumber(i, j);
@@ -74,9 +74,9 @@ void Puzzle::getSomeNumbersAdjacent(int y, int x)
 
 void Puzzle::setNumbers()
 {
-    for (int y = 0; y < _matrix.size(); y++)
+    for (int y = 0; y < (int)_matrix.size(); y++)
     {
-        for (int x = 0; x < _matrix[y].size(); x++)
+        for (int x = 0; x < (int)_matrix[y].size(); x++)
         {
             if (_matrix[y][x] == '#')
                 this->getSomeNumbersAdjacent(y, x);
