@@ -1,17 +1,8 @@
 #include <iostream>
 #include <fstream>
 
-void debug(const char &f, const char &l, const int &v)
-{
-
-	std::cout << "first : " << f;
-	std::cout << " | last : " << l;
-	std::cout << " | value : " << v << std::endl;
-}
-
 size_t getNumberLine(const std::string &line)
 {
-
 	size_t value = 0;
 	char first;
 	char last;
@@ -28,13 +19,11 @@ size_t getNumberLine(const std::string &line)
 		}
 	}
 	value = (first - '0') * 10 + (last - '0');
-	//	debug(first, last, value);
 	return value;
 }
 
 int main(int argc, char **argv)
 {
-
 	std::string line;
 	std::ifstream file;
 	size_t value = 0;
