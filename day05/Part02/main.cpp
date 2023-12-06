@@ -86,7 +86,7 @@ void Garden::processCalcul(size_t seed, std::vector<Ranges> ranges)
 {
     _seed = seed;
 
-    for (int i = 0; i < ranges.size(); i++)
+    for (size_t i = 0; i < ranges.size(); i++)
     {
         if ((_seed >= ranges[i].src) && (_seed < (ranges[i].src + ranges[i].range)))
         {
@@ -102,7 +102,7 @@ void Garden::calculSeeds()
     std::map<std::string, std::vector<Ranges>>::iterator itD;
 
     std::vector<std::vector<Ranges>> rtmp;
-    for (int i = 0; i < nameOfMap.size(); i++)
+    for (size_t i = 0; i < nameOfMap.size(); i++)
     {
         rtmp.push_back((_data.find(nameOfMap[i]))->second);
     }
@@ -115,7 +115,7 @@ void Garden::calculSeeds()
         for (; seedIncr < *itEnd + *it; seedIncr++)
         {
             _seed = seedIncr;
-            for (int i = 0; i < rtmp.size(); i++)
+            for (size_t i = 0; i < rtmp.size(); i++)
             {
                 this->processCalcul(_seed, rtmp[i]);
             }
