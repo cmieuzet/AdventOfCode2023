@@ -10,14 +10,6 @@ Day04 : c++
 
 Day05 : c++
 
-/ *** Rust ***/
+Day06 : c++
 
-cargo new dayxx
-
-mkdir bin
-
-touch bin/part01 bin/part02
-
-cargo run --bin <main.rs>
-
-cargo clean
+Day07 : c++
