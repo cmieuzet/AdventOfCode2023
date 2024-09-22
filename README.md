@@ -1,21 +1,21 @@
 # AdventOfCode2023
 
-Day01 : c++ .... Day11 : xxx
+Day01 : c++
 
-Day02 : c++ .... Day12 : xxx
+Day02 : c++
 
-Day03 : c++ .... Day13 : xxx
+Day03 : c++
 
-Day04 : c++ .... Day14 : xxx
+Day04 : c++
 
-Day05 : c++ .... Day15 : xxx
+Day05 : c++
 
-Day06 : c++ .... Day16 : xxx
+Day06 : c++
 
-Day07 : c++ .... Day17 : xxx
+Day07 : c++
 
-Day08 : c++ .... Day18 : xxx
+Day08 : c++
 
-Day09 : c++ .... Day19 : xxx
+Day09 : c++
 
-Day10 : xxx .... Day20 : xxx
+Day10 : c++
